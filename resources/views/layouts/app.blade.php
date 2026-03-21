@@ -57,14 +57,23 @@
                 </ul>
                 <ul class="navbar-nav">
                     @auth
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ url('/dashboard') }}">Dashboard</a>
+                        </li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
-                                {{ Auth::user()->name }}
+                                {{ Auth::user()->name ?? 'User' }}
                             </a>
                             <ul class="dropdown-menu">
                                 <li><a class="dropdown-item" href="{{ url('/profile') }}">Profile</a></li>
+                                <li><a class="dropdown-item" href="{{ url('/dashboard') }}">Dashboard</a></li>
                                 <li><hr class="dropdown-divider"></li>
-                                <li><a class="dropdown-item" href="{{ url('/logout') }}">Logout</a></li>
+                                <li>
+                                    <form method="POST" action="{{ route('logout') }}" class="m-0">
+                                        @csrf
+                                        <button type="submit" class="dropdown-item btn btn-link">Logout</button>
+                                    </form>
+                                </li>
                             </ul>
                         </li>
                     @else
