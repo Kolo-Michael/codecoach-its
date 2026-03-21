@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.authentication')
 
 @section('title', 'Register - CodeCoach ITS')
 
