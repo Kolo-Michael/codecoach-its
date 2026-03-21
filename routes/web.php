@@ -2,22 +2,44 @@
 
 use Illuminate\Support\Facades\Route;
 
-// Home page
+// Public routes
 Route::get('/', function () {
     return view('pages.home');
 });
 
-// Courses pages
 Route::get('/courses', function () {
     return view('pages.courses');
 });
 
-// Single course page
 Route::get('/courses/{id}', function ($id) {
     return view('pages.course');
 })->where('id', '[0-9]+');
 
-// Lesson page
 Route::get('/courses/{courseId}/lessons/{lessonId}', function ($courseId, $lessonId) {
     return view('pages.lesson');
 })->where(['courseId' => '[0-9]+', 'lessonId' => '[0-9]+']);
+
+// Authentication routes
+Route::get('/login', function () {
+    return view('auth.login');
+})->name('login');
+
+Route::get('/register', function () {
+    return view('auth.register');
+})->name('register');
+
+// Dashboard route (protected)
+Route::get('/dashboard', function () {
+    return view('pages.dashboard');
+})->middleware('auth')->name('dashboard');
+
+// Profile route (protected)
+Route::get('/profile', function () {
+    return view('pages.profile');
+})->middleware('auth')->name('profile');
+
+// Logout route
+Route::post('/logout', function () {
+    // We'll implement proper logout logic when we have a working PHP version
+    return redirect('/');
+})->name('logout');

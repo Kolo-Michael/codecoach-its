@@ -1,28 +1,22 @@
-@extends('layouts.app') 
+@extends('layouts.app')
 
-@section('title', 'Home - CodeCoach ITS')
+@section('title', 'Dashboard - CodeCoach ITS')
 
 @section('content')
 <div class="row">
     <div class="col-md-12">
         <div class="jumbotron bg-primary text-white rounded-3 p-5 mb-4">
-            <h1 class="display-4">Welcome to CodeCoach ITS</h1>
-            <p class="lead">Master Python programming with our intelligent tutoring system</p>
+            <h1 class="display-4">Welcome back, {{ Auth::user()->name }}!</h1>
+            <p class="lead">Continue your learning journey with CodeCoach ITS</p>
             <hr class="my-4 bg-light">
-            <p>Learn at your own pace with personalized feedback and assessments</p>
-            @auth
-                <a class="btn btn-light btn-lg" href="{{ url('/dashboard') }}" role="button">Go to Dashboard</a>
-            @else
-                <a class="btn btn-light btn-lg" href="{{ url('/register') }}" role="button">Get Started</a>
-                <a class="btn btn-outline-light btn-lg" href="{{ url('/login') }}" role="button">Login</a>
-            @endauth
+            <p>Track your progress, access your courses, and continue learning.</p>
         </div>
     </div>
 </div>
 
 <div class="row">
     <div class="col-md-12">
-        <h2 class="mb-4">Featured Courses</h2>
+        <h2 class="mb-4">Your Courses</h2>
     </div>
 </div>
 
@@ -35,8 +29,10 @@
                 <h5 class="card-title">Python Fundamentals</h5>
                 <p class="card-text">Learn the basics of Python programming including variables, data types, and control structures.</p>
                 <div class="mt-auto">
-                    <small class="text-muted">Beginner • 4 weeks</small>
-                    <a href="{{ url('/courses/1') }}" class="btn btn-primary w-100 mt-2">Enroll Now</a>
+                    <div class="progress mb-2">
+                        <div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">25% Complete</div>
+                    </div>
+                    <a href="{{ url('/courses/1') }}" class="btn btn-primary w-100">Continue Learning</a>
                 </div>
             </div>
         </div>
@@ -50,8 +46,10 @@
                 <h5 class="card-title">Data Structures</h5>
                 <p class="card-text">Master essential data structures like lists, dictionaries, stacks, and queues in Python.</p>
                 <div class="mt-auto">
-                    <small class="text-muted">Intermediate • 6 weeks</small>
-                    <a href="{{ url('/courses/2') }}" class="btn btn-primary w-100 mt-2">Enroll Now</a>
+                    <div class="progress mb-2">
+                        <div class="progress-bar" role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">0% Complete</div>
+                    </div>
+                    <a href="{{ url('/courses/2') }}" class="btn btn-outline-primary w-100">Start Learning</a>
                 </div>
             </div>
         </div>
@@ -65,8 +63,10 @@
                 <h5 class="card-title">Algorithms</h5>
                 <p class="card-text">Learn to design and analyze algorithms for problem-solving in Python.</p>
                 <div class="mt-auto">
-                    <small class="text-muted">Advanced • 8 weeks</small>
-                    <a href="{{ url('/courses/3') }}" class="btn btn-primary w-100 mt-2">Enroll Now</a>
+                    <div class="progress mb-2">
+                        <div class="progress-bar" role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">0% Complete</div>
+                    </div>
+                    <a href="{{ url('/courses/3') }}" class="btn btn-outline-primary w-100">Start Learning</a>
                 </div>
             </div>
         </div>
@@ -76,28 +76,30 @@
 <div class="row mt-5">
     <div class="col-md-12">
         <div class="card">
+            <div class="card-header">
+                <h3 class="card-title">Learning Statistics</h3>
+            </div>
             <div class="card-body">
-                <h3 class="card-title">How CodeCoach ITS Works</h3>
                 <div class="row text-center">
                     <div class="col-md-3">
                         <i class="fas fa-book fa-3x text-primary mb-3"></i>
-                        <h5>Learn</h5>
-                        <p>Interactive lessons with multimedia content</p>
+                        <h5>3</h5>
+                        <p>Courses Enrolled</p>
                     </div>
                     <div class="col-md-3">
-                        <i class="fas fa-laptop-code fa-3x text-primary mb-3"></i>
-                        <h5>Practice</h5>
-                        <p>Hands-on coding exercises and projects</p>
+                        <i class="fas fa-graduation-cap fa-3x text-primary mb-3"></i>
+                        <h5>1</h5>
+                        <p>Courses Completed</p>
                     </div>
                     <div class="col-md-3">
-                        <i class="fas fa-robot fa-3x text-primary mb-3"></i>
-                        <h5>Get Feedback</h5>
-                        <p>AI-powered personalized feedback</p>
+                        <i class="fas fa-clock fa-3x text-primary mb-3"></i>
+                        <h5>12h</h5>
+                        <p>Hours Learned</p>
                     </div>
                     <div class="col-md-3">
-                        <i class="fas fa-chart-line fa-3x text-primary mb-3"></i>
-                        <h5>Track Progress</h5>
-                        <p>Monitor your learning journey</p>
+                        <i class="fas fa-trophy fa-3x text-primary mb-3"></i>
+                        <h5>5</h5>
+                        <p>Achievements</p>
                     </div>
                 </div>
             </div>
