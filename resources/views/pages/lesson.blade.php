@@ -1,5 +1,9 @@
 @extends('layouts.app')
 
+@section('head')
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+@endsection
+
 @section('title', 'Lesson - CodeCoach ITS')
 
 @section('content')
@@ -30,7 +34,7 @@
                         <p>In this lesson, you'll learn about variables in Python and how to use them effectively.</p>
                         
                         <div class="ratio ratio-16x9 mb-4">
-                            <iframe src="https://player.vimeo.com/video/placeholder" title="Lesson Video" allowfullscreen></iframe>
+                            <iframe src="https://player.vimeo.com/video/789456123" title="Variables and Data Types in Python" allowfullscreen></iframe>
                         </div>
                         
                         <h4>Key Concepts</h4>
@@ -77,6 +81,25 @@ print(type(is_student)) <span class="text-muted"># &lt;class 'bool'&gt;</span>
                             <li>Available in ebook format (boolean)</li>
                         </ol>
                         <p>Print each variable and its type.</p>
+                        
+                        <div class="alert alert-success mt-3">
+                            <h5><i class="fas fa-code"></i> Sample Solution</h5>
+                            <pre class="bg-light p-3">
+<span class="text-muted"># Book information</span>
+book_title = "Python Programming Basics"
+book_author = "Jane Smith"
+publication_year = 2026
+book_price = 29.99
+is_ebook = True
+
+<span class="text-muted"># Print variables and their types</span>
+print(f"Title: {book_title} (Type: {type(book_title).__name__})")
+print(f"Author: {book_author} (Type: {type(book_author).__name__})")
+print(f"Year: {publication_year} (Type: {type(publication_year).__name__})")
+print(f"Price: ${book_price} (Type: {type(book_price).__name__})")
+print(f"Ebook: {is_ebook} (Type: {type(is_ebook).__name__})")
+                            </pre>
+                        </div>
                     </div>
                     
                     <div class="col-md-4">
@@ -89,16 +112,16 @@ print(type(is_student)) <span class="text-muted"># &lt;class 'bool'&gt;</span>
                                     <a href="#" class="list-group-item list-group-item-action active">
                                         <i class="fas fa-play-circle me-2"></i> Understanding Variables
                                     </a>
-                                    <a href="#" class="list-group-item list-group-item-action">
+                                    <a href="/courses/1/lessons/2" class="list-group-item list-group-item-action">
                                         <i class="far fa-play-circle me-2"></i> Numeric Data Types
                                     </a>
-                                    <a href="#" class="list-group-item list-group-item-action">
+                                    <a href="/courses/1/lessons/3" class="list-group-item list-group-item-action">
                                         <i class="far fa-play-circle me-2"></i> Strings and String Operations
                                     </a>
-                                    <a href="#" class="list-group-item list-group-item-action">
+                                    <a href="/courses/1/lessons/4" class="list-group-item list-group-item-action">
                                         <i class="far fa-play-circle me-2"></i> Boolean Values and Logic
                                     </a>
-                                    <a href="#" class="list-group-item list-group-item-action">
+                                    <a href="/courses/1/lessons/5" class="list-group-item list-group-item-action">
                                         <i class="far fa-keyboard me-2"></i> Coding Exercise: Variable Practice
                                     </a>
                                 </div>
@@ -111,20 +134,47 @@ print(type(is_student)) <span class="text-muted"># &lt;class 'bool'&gt;</span>
                             </div>
                             <div class="card-body">
                                 <p>Need help understanding a concept? Ask our AI tutor!</p>
-                                <button class="btn btn-outline-primary w-100">
-                                    <i class="fas fa-robot me-2"></i> Ask AI Tutor
-                                </button>
+                                <div class="input-group mb-3">
+                                    <input type="text" class="form-control" placeholder="Ask about variables, data types, etc.">
+                                    <button class="btn btn-outline-primary" type="button">
+                                        <i class="fas fa-paper-plane"></i>
+                                    </button>
+                                </div>
+                                <small class="text-muted">Examples: "What is the difference between int and float?", "How do I name variables in Python?"</small>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+            
+            <div class="card mt-4">
+                <div class="card-header">
+                    <h5>Knowledge Check</h5>
+                </div>
+                <div class="card-body">
+                    <p>Test your understanding of variables and data types:</p>
+                    <div class="form-check mb-2">
+                        <input class="form-check-input" type="radio" name="quiz1" id="quiz1a">
+                        <label class="form-check-label" for="quiz1a">A variable is a container that stores data values</label>
+                    </div>
+                    <div class="form-check mb-2">
+                        <input class="form-check-input" type="radio" name="quiz1" id="quiz1b">
+                        <label class="form-check-label" for="quiz1b">A variable is a type of loop in Python</label>
+                    </div>
+                    <div class="form-check mb-2">
+                        <input class="form-check-input" type="radio" name="quiz1" id="quiz1c">
+                        <label class="form-check-label" for="quiz1c">A variable is a function that prints text</label>
+                    </div>
+                    <button class="btn btn-sm btn-outline-primary mt-2" id="checkAnswer1">Check Answer</button>
+                </div>
+            </div>
+            
             <div class="card-footer d-flex justify-content-between">
-                <a href="#" class="btn btn-outline-secondary">
-                    <i class="fas fa-arrow-left me-2"></i> Previous Lesson
+                <a href="/courses/1" class="btn btn-outline-secondary">
+                    <i class="fas fa-arrow-left me-2"></i> Back to Course
                 </a>
-                <a href="#" class="btn btn-primary">
-                    Next Lesson <i class="fas fa-arrow-right ms-2"></i>
+                <a href="/courses/1/lessons/2" class="btn btn-primary">
+                    Next Lesson: Numeric Data Types <i class="fas fa-arrow-right ms-2"></i>
                 </a>
             </div>
         </div>
@@ -178,4 +228,27 @@ print(type(is_student)) <span class="text-muted"># &lt;class 'bool'&gt;</span>
         </div>
     </div>
 </div>
+@endsection
+
+@section('scripts')
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Knowledge check functionality
+    const checkButton = document.getElementById('checkAnswer1');
+    if (checkButton) {
+        checkButton.addEventListener('click', function() {
+            const correctAnswer = document.getElementById('quiz1a');
+            if (correctAnswer.checked) {
+                checkButton.textContent = 'Correct! ✓';
+                checkButton.classList.remove('btn-outline-primary');
+                checkButton.classList.add('btn-success');
+            } else {
+                checkButton.textContent = 'Try Again ✗';
+                checkButton.classList.remove('btn-outline-primary');
+                checkButton.classList.add('btn-danger');
+            }
+        });
+    }
+});
+</script>
 @endsection
