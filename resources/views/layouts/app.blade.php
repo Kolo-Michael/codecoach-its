@@ -52,21 +52,26 @@
                         <a class="nav-link" href="{{ url('/courses') }}">Courses</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ url('/dashboard') }}">Dashboard</a>
+                        <a class="nav-link" href="{{ url('/catalog') }}">Catalog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url('/community') }}">Community</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url('/help') }}">Help</a>
                     </li>
                 </ul>
                 <ul class="navbar-nav">
                     @auth
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ url('/dashboard') }}">Dashboard</a>
-                        </li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
                                 {{ Auth::user()->name ?? 'User' }}
                             </a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="{{ url('/profile') }}">Profile</a></li>
                                 <li><a class="dropdown-item" href="{{ url('/dashboard') }}">Dashboard</a></li>
+                                <li><a class="dropdown-item" href="{{ url('/learning') }}">My Learning</a></li>
+                                <li><a class="dropdown-item" href="{{ url('/profile') }}">Profile</a></li>
+                                <li><a class="dropdown-item" href="{{ url('/certificates') }}">Certificates</a></li>
                                 <li><hr class="dropdown-divider"></li>
                                 <li>
                                     <form method="POST" action="{{ route('logout') }}" class="m-0">
@@ -100,11 +105,37 @@
     <footer class="bg-light border-top py-4">
         <div class="container">
             <div class="row">
-                <div class="col-md-6">
+                <div class="col-md-3">
                     <h5>CodeCoach ITS</h5>
                     <p>Intelligent Tutoring System for Python Programming</p>
                 </div>
-                <div class="col-md-6 text-md-end">
+                <div class="col-md-3">
+                    <h6>Learn</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="{{ url('/courses') }}" class="text-decoration-none">Courses</a></li>
+                        <li><a href="{{ url('/catalog') }}" class="text-decoration-none">Catalog</a></li>
+                        <li><a href="{{ url('/degrees') }}" class="text-decoration-none">Degrees</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h6>Community</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="{{ url('/community') }}" class="text-decoration-none">Discussions</a></li>
+                        <li><a href="{{ url('/events') }}" class="text-decoration-none">Events</a></li>
+                        <li><a href="{{ url('/blog') }}" class="text-decoration-none">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h6>Support</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="{{ url('/help') }}" class="text-decoration-none">Help Center</a></li>
+                        <li><a href="{{ url('/contact') }}" class="text-decoration-none">Contact Us</a></li>
+                        <li><a href="{{ url('/privacy') }}" class="text-decoration-none">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row mt-3">
+                <div class="col-md-12 text-center">
                     <p>&copy; 2026 CodeCoach ITS. All rights reserved.</p>
                 </div>
             </div>

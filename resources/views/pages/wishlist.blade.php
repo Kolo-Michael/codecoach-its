@@ -5,88 +5,79 @@
 @section('content')
 <div class="row">
     <div class="col-md-12">
-        <nav aria-label="breadcrumb">
-            <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="{{ url('/') }}">Home</a></li>
-                <li class="breadcrumb-item"><a href="{{ url('/profile') }}">Profile</a></li>
-                <li class="breadcrumb-item active" aria-current="page">Wishlist</li>
-            </ol>
-        </nav>
+        <h1>My Wishlist</h1>
+        <p class="lead">Courses you've saved for later</p>
     </div>
 </div>
 
 <div class="row">
-    <div class="col-md-12">
-        <h2>My Wishlist</h2>
-        <p class="text-muted">Courses you've saved for later</p>
-        
-        <div class="row">
-            <!-- Wishlist Item 1 -->
-            <div class="col-md-12 mb-4">
-                <div class="card course-card">
-                    <div class="row g-0">
-                        <div class="col-md-3">
-                            <img src="https://placehold.co/300x150/0056D2/FFFFFF?text=Data+Structures" class="img-fluid rounded-start h-100" style="object-fit: cover;" alt="Data Structures">
+    @if(false) {{-- This would be replaced with actual wishlist items --}}
+        <!-- Course 1 -->
+        <div class="col-md-4 mb-4">
+            <div class="card course-card h-100">
+                <img src="https://placehold.co/400x200/0056D2/FFFFFF?text=Machine+Learning" class="card-img-top" alt="Machine Learning">
+                <div class="card-body d-flex flex-column">
+                    <h5 class="card-title">Machine Learning Fundamentals</h5>
+                    <p class="card-text">Learn the core concepts of machine learning with Python and scikit-learn.</p>
+                    <div class="mt-auto">
+                        <div class="d-flex justify-content-between">
+                            <small class="text-muted">4.9 ★★★★★</small>
+                            <small class="text-muted">Intermediate</small>
                         </div>
-                        <div class="col-md-9">
-                            <div class="card-body">
-                                <h5 class="card-title">Data Structures</h5>
-                                <p class="card-text">Master essential data structures like lists, dictionaries, stacks, and queues in Python.</p>
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <div>
-                                        <small class="text-muted">4.9 ★★★★★ (1,450 ratings)</small>
-                                        <br>
-                                        <small class="text-muted">Intermediate • 6 weeks</small>
-                                    </div>
-                                    <div>
-                                        <button class="btn btn-outline-secondary me-2">
-                                            <i class="fas fa-bookmark"></i> Saved
-                                        </button>
-                                        <a href="{{ url('/courses/2') }}" class="btn btn-primary">View Course</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Wishlist Item 2 -->
-            <div class="col-md-12 mb-4">
-                <div class="card course-card">
-                    <div class="row g-0">
-                        <div class="col-md-3">
-                            <img src="https://placehold.co/300x150/0056D2/FFFFFF?text=Algorithms" class="img-fluid rounded-start h-100" style="object-fit: cover;" alt="Algorithms">
-                        </div>
-                        <div class="col-md-9">
-                            <div class="card-body">
-                                <h5 class="card-title">Algorithms</h5>
-                                <p class="card-text">Learn to design and analyze algorithms for problem-solving in Python.</p>
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <div>
-                                        <small class="text-muted">4.7 ★★★★★ (980 ratings)</small>
-                                        <br>
-                                        <small class="text-muted">Advanced • 8 weeks</small>
-                                    </div>
-                                    <div>
-                                        <button class="btn btn-outline-secondary me-2">
-                                            <i class="fas fa-bookmark"></i> Saved
-                                        </button>
-                                        <a href="{{ url('/courses/3') }}" class="btn btn-primary">View Course</a>
-                                    </div>
-                                </div>
-                            </div>
+                        <div class="mt-2">
+                            <a href="{{ url('/courses/9') }}" class="btn btn-primary w-100">View Details</a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
         
-        <div class="text-center mt-4">
-            <a href="{{ url('/courses') }}" class="btn btn-primary">
-                <i class="fas fa-plus"></i> Add More Courses
-            </a>
+        <!-- Course 2 -->
+        <div class="col-md-4 mb-4">
+            <div class="card course-card h-100">
+                <img src="https://placehold.co/400x200/0056D2/FFFFFF?text=Data+Visualization" class="card-img-top" alt="Data Visualization">
+                <div class="card-body d-flex flex-column">
+                    <h5 class="card-title">Data Visualization with Python</h5>
+                    <p class="card-text">Create compelling visualizations using matplotlib, seaborn, and plotly.</p>
+                    <div class="mt-auto">
+                        <div class="d-flex justify-content-between">
+                            <small class="text-muted">4.8 ★★★★★</small>
+                            <small class="text-muted">Intermediate</small>
+                        </div>
+                        <div class="mt-2">
+                            <a href="{{ url('/courses/10') }}" class="btn btn-primary w-100">View Details</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-    </div>
+        
+        <!-- Course 3 -->
+        <div class="col-md-4 mb-4">
+            <div class="card course-card h-100">
+                <img src="https://placehold.co/400x200/0056D2/FFFFFF?text=Cloud+Computing" class="card-img-top" alt="Cloud Computing">
+                <div class="card-body d-flex flex-column">
+                    <h5 class="card-title">Cloud Computing with AWS</h5>
+                    <p class="card-text">Deploy and manage applications on Amazon Web Services.</p>
+                    <div class="mt-auto">
+                        <div class="d-flex justify-content-between">
+                            <small class="text-muted">4.7 ★★★★★</small>
+                            <small class="text-muted">Advanced</small>
+                        </div>
+                        <div class="mt-2">
+                            <a href="{{ url('/courses/11') }}" class="btn btn-primary w-100">View Details</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    @else
+        <div class="col-md-12 text-center">
+            <i class="fas fa-bookmark fa-5x text-muted mb-4"></i>
+            <h3>You haven't saved any courses yet</h3>
+            <p class="lead">Save courses to your wishlist to easily find them later</p>
+            <a href="{{ url('/catalog') }}" class="btn btn-primary">Browse Courses</a>
+        </div>
+    @endif
 </div>
 @endsection
